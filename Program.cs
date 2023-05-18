@@ -7,7 +7,7 @@ namespace FileDownloader
 {
     class Program
     {
-        private static void NoFileFound()
+        private static void NoUrlInFile()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("You must add some links to `urls.txt` file");
@@ -26,7 +26,7 @@ namespace FileDownloader
                 downloader.RenameDownloadFolder();
             }
 
-            NoFileFound();
+            NoUrlInFile();
         }
     }
 }
