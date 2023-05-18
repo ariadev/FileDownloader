@@ -20,6 +20,11 @@ namespace FileDownloader
             Directory.CreateDirectory(DownloadFolder);
         }
 
+        /*
+            Get all the links in the UrlsFile and start
+            downloading them one by one and save into the
+            Download folder as the default folder.
+        */
         public void DownloadAll()
         {
             string[] urls = File.ReadAllLines(UrlsFile);
@@ -58,6 +63,11 @@ namespace FileDownloader
             }
         }
 
+        /*
+            Get the name of the download folder and
+            rename the default one to the name user
+            have entered.
+        */
         public void RenameDownloadFolder()
         {
             string newFolderName = null;
