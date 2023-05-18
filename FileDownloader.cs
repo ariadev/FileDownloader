@@ -63,7 +63,9 @@ namespace FileDownloader
             string newFolderName = null;
             while (string.IsNullOrWhiteSpace(newFolderName))
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("What would you like to name the download folder? ");
+                Console.ResetColor();
                 newFolderName = Console.ReadLine().Trim();
             }
             string newFolderPath = Path.Combine(Directory.GetCurrentDirectory(), newFolderName);
