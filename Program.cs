@@ -17,16 +17,19 @@ namespace FileDownloader
         static void Main(string[] args)
         {
             string urlsFile = "urls.txt";
-            while (string.IsNullOrWhiteSpace(urlsFile))
+            string[] urls = File.ReadAllLines(urlsFile);
+
+            if (urls.Length > 0)
             {
                 string downloadFolder = Path.Combine(Directory.GetCurrentDirectory(), "Download");
                 FileDownloader downloader = new FileDownloader(urlsFile, downloadFolder);
 
                 downloader.DownloadAll();
                 downloader.RenameDownloadFolder();
+            } else
+            {
+                NoUrlInFile();
             }
-
-            NoUrlInFile();
         }
     }
 }

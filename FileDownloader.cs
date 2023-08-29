@@ -29,7 +29,6 @@ namespace FileDownloader
         {
             string[] urls = File.ReadAllLines(UrlsFile);
             int remainingFiles = urls.Length;
-
             using (WebClient client = new WebClient())
             {
                 Stopwatch sw = new Stopwatch();
@@ -70,7 +69,7 @@ namespace FileDownloader
         */
         public void RenameDownloadFolder()
         {
-            string newFolderName = null;
+            string ?newFolderName = null;
             while (string.IsNullOrWhiteSpace(newFolderName))
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;

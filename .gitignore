@@ -6,6 +6,8 @@
 bin/
 obj/
 
+Download/
+
 # User-specific files
 *.rsuser
 *.suo
